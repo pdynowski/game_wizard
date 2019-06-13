@@ -1,0 +1,20 @@
+<h1>Details for <%= @game.title %> </h1>
+
+<table>
+	<tr>
+		<th>Min. Players:</th>
+		<td><%= @game.min_players %></td>
+	</tr>
+	<tr>
+		<th>Max. Players:</th>
+		<td><%= @game.max_players %></td>
+	</tr>
+	<tr>
+		<th>Description: </th>
+		<td><%= @game.description %></td>
+	</tr>
+	<tr>
+		<th>External Link: </th>
+		<td><a><%= @game.external_link %></a></td>
+	</tr>
+</table>

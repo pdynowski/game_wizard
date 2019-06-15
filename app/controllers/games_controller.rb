@@ -18,6 +18,15 @@ class GamesController < ApplicationController
 		redirect_to game_path(game)
 	end
 
+	def new
+		@game = Game.new
+	end
+
+	def create
+		game = Game.create(allowed_params)
+		redirect_to game_path(game)
+	end
+
 	def allowed_params
 		params.require(:game).permit(:title, :min_players, :max_players, :description, :external_link)
 	end

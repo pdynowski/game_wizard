@@ -1,0 +1,18 @@
+<%= form_with model: @game do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<p>
+	<%= f.label :min_players %>
+	<%= f.number_field :min_players, in: 1..10, step: 1 %>
+	<p>
+	<%= f.label :max_players %>
+	<%= f.number_field :max_players, in: 1..10, step: 1 %>
+	<p>
+	<%= f.label :description %>
+	<%= f.text_area :description, size: "60x12" %>
+	<p>
+	<%= f.label :external_link %>
+	<%= f.text_field :external_link %>
+	<p>
+  <%= f.submit %>
+<% end %>

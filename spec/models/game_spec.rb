@@ -21,4 +21,9 @@ RSpec.describe Game, type: :model do
 		game = Game.new(max_players: nil)
 		expect(game).to_not be_valid
 	end
+
+	it "checks for uniqueness of game title" do
+		Game.create!(title: "TestGame", min_players: 1, max_players: 10)
+		expect{Game.create!(title: "TestGame", min_players: 1, max_players: 10)}.to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Title has already been taken')
+	end
 end

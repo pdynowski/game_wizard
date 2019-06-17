@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <% unless params["controller"] == "sessions" %>
+      <% if current_user %>
+        Signed in as <%= link_to "#{name_to_display}", user_path(current_user) %> | <%= link_to "Logout", '/logout' %>
+      <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+      <% end %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

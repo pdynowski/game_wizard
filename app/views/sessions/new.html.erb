@@ -7,6 +7,7 @@
   <%= submit_tag "Submit" %>
 
 <% end %>
+<p>Don't have an account? Sign up <%= link_to "here", new_user_path %><p>
 <% if !error.blank? %>
 	<%= "#{error}" %>
 <% end %>

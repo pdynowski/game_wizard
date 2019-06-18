@@ -10,11 +10,11 @@
   </head>
 
   <body>
-    <% unless params["controller"] == "sessions" %>
+    <% unless ["sessions"].include? params["controller"] %>
       <% if current_user %>
         Signed in as <%= link_to "#{name_to_display}", user_path(current_user) %> | <%= link_to "Logout", '/logout' %>
       <% else %>
-        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', new_user_path %>
       <% end %>
     <% end %>
 

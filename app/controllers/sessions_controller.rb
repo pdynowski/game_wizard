@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
 
 	def new
-		render :new, locals: {error: ""}
+		if current_user
+			redirect_to user_path(current_user) 
+		else
+			render :new, locals: {error: ""}
+		end
 	end
 
 	def create

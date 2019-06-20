@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+ 	font-family: 'myoldrem';
+ 	src: url('myoldrem/myoldrem.ttf') format('truetype');
+ }
+
+ @font-face {
+ 	font-family: 'BirminghamElongated';
+ 	src: url('Birmingham/BirminghamElongated.ttf') format('truetype');
+ }
+
+ p {
+ 	font-family: 'BirminghamElongated';
+ }
+
+ input {
+ 	font-family: 'myoldrem';
+ 	font-size: 14px;
+ }
+
+ label {
+	font-family: 'myoldrem';
+	font-size: 18px;
+}
+
+h1 {
+	font-family: 'BirminghamElongated';
+}

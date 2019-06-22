@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <% unless ["sessions"].include? params["controller"] %>
+    <% unless remove_user_header? %>
       <% if current_user %>
         <p>Signed in as <%= link_to "#{name_to_display}", user_path(current_user) %> | <%= link_to "Logout", '/logout' %></p>
       <% else %>

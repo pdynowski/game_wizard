@@ -10,10 +10,10 @@
 
   <% end %>
   <div class="notifications">
-    <% if error.blank? %>
-      <p>Don't have an account? Sign up <%= link_to "here", new_user_path %></p>
+    <% if flash.alert %>
+      <p><%= "#{flash.alert}" %></p>
     <% else %>
-    	<p><%= "#{error}" %></p>
+      <p>Don't have an account? Sign up <%= link_to "here", new_user_path %></p>
     <% end %>
   </div>
 </div>

@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 		if current_user
 			redirect_to user_path(current_user)
 		else
-			render :new, locals: {error: ""}
+			render :new
 		end
 	end
 
@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id
 			redirect_to user_path(user)
 		else
-			render :new, locals: {error: "Invalid username or password"}
+			flash.now[:alert] = "Invalid username or password"
+			render :new
 		end
 	end
 

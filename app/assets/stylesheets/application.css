@@ -48,3 +48,7 @@ h1 {
 	font-family: 'BirminghamElongated';
   font-size: 48px;
 }
+
+.notifications {
+  text-align: center;
+}

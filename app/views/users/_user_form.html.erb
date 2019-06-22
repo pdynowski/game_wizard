@@ -15,8 +15,8 @@
 	  <%= f.submit %>
 	<% end %>
 	<div>
-		<% unless errors.blank? %>
-			<p> <%= "#{errors}" %></p>
+		<% if flash.alert %>
+			<p> <%= "#{flash.alert}" %></p>
 		<% end %>
 	</div>
 </div>

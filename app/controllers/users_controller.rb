@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 			redirect_to user_path(current_user)
 		else
 			@user = User.new
-			render :new, locals: {errors: ""}
+			render :new
 		end
 	end
 
@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 			session[:user_id] = user.id
 			redirect_to user_path(user)
 		rescue Exception => e
-			render :new, locals: {errors: e.message} and return
+			flash.now[:alert] = e.message
+			render :new and return
 		end
 	end
 

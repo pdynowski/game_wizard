@@ -1,13 +1,19 @@
-<h1>Login</h1>
+<div class="login">
+  <%= form_for :login, html: { class: "login-form" } do |f| %>
 
-<%= form_tag '/login' do %>
+    <%= f.label "Email:" %>
+    <%= f.text_field :email %>
+    <p>
+    <%= f.label "Password:" %>
+    <%= f.password_field :password %>
+    <%= f.submit "Log in" %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
-<p>Don't have an account? Sign up <%= link_to "here", new_user_path %><p>
-<% if !error.blank? %>
-	<%= "#{error}" %>
-<% end %>
+  <% end %>
+  <div class="notifications">
+    <% if error.blank? %>
+      <p>Don't have an account? Sign up <%= link_to "here", new_user_path %></p>
+    <% else %>
+    	<p><%= "#{error}" %></p>
+    <% end %>
+  </div>
+</div>

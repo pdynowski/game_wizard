@@ -26,18 +26,25 @@
 
  p {
  	font-family: 'BirminghamElongated';
+  font-size: 20px;
  }
 
  input {
  	font-family: 'myoldrem';
- 	font-size: 14px;
+ 	font-size: 18px;
  }
 
  label {
 	font-family: 'myoldrem';
-	font-size: 18px;
+	font-size: 22px;
+  width: 4em;
+  float: left;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block
 }
 
 h1 {
 	font-family: 'BirminghamElongated';
+  font-size: 48px;
 }

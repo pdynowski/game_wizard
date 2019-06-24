@@ -24,6 +24,10 @@
  	src: url('Birmingham/BirminghamElongated.ttf') format('truetype');
  }
 
+ .user_links {
+   text-align: right;
+ }
+
  p {
  	font-family: 'BirminghamElongated';
   font-size: 20px;

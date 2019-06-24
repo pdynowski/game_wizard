@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
 	def edit
 		if current_user && params[:id].to_i == current_user.id
+			@user = current_user
 			render 'edit'
 		else
 			redirect_to '/'
@@ -30,6 +31,14 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		@user = current_user
+		begin
+			@user.update!(allowed_params)
+			redirect_to user_path(@user)
+		rescue Exception => e
+			flash.now[:alert] = e.message
+			render :edit and return
+		end
 	end
 
 	def index
@@ -42,6 +51,7 @@ class UsersController < ApplicationController
 
 	def show
 		if current_user && params[:id].to_i == current_user.id
+			@user = current_user
 			render 'show'
 		else
 			redirect_to '/'

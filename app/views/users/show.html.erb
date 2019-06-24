@@ -1,1 +1,8 @@
-<h1>USER SHOW PAGE PLACEHOLDER</h1>
+<div>
+  <div class="user_info_panel">
+    <p> Current user information </p>
+    Email address: <%= @user.email %><br>
+    Display name: <%= @user.display_name %><br>
+    <%= link_to "Edit user information", edit_user_path(@user) %>
+  </div>
+</div>
